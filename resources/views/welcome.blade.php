@@ -57,7 +57,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="cta-btn" href="login.php">Login</a>
+      <a class="cta-btn" href="">Login</a>
 
     </div>
   </header>
@@ -202,34 +202,9 @@
     <!-- Clients Section -->
     
    
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Berita</h2>
-        <p>Berita Kami</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Portfolio Section -->
-
-   
-        
-
+      
     <!-- Contact Section -->
     <section id="contact" class="contact section">
 
