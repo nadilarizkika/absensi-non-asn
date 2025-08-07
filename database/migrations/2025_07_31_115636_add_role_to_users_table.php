@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        // database/migrations/xxxx_xx_xx_create_users_table.php
-Schema::create('users', function (Blueprint $table) {
-    $table->id();
-    $table->string('name');
-    $table->timestamps();
-});
-
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 
     /**
@@ -29,6 +25,8 @@ Schema::create('users', function (Blueprint $table) {
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 };

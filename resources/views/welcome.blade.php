@@ -4,17 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Dewi Bootstrap Template</title>
+  <title>Sistem Absensi Non-ASN - Dinas Kominfo Binjai</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" href="{{ asset('img/apple-touch-icon.png') }}">
+  <link rel="apple-touch-icon" href="{{ asset('img/apple-touch-icon.png') }}">
 
-<!-- Favicon -->
-<link rel="icon" href="{{ asset('img/favicon.png') }}">
-
-
+  <!-- Favicon -->
+  <link rel="icon" href="{{ asset('img/favicon.png') }}">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -24,332 +22,226 @@
   <!-- Vendor CSS Files -->
   <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.css') }}">
-    <link rel="stylesheet" href="{{ asset('vendor/aos/aos.css') }}">
-      <link rel="stylesheet" href="{{ asset('vendor/glightbox/css/glightbox.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('vendor/swiper/swiper-bundle.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/aos/aos.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/glightbox/css/glightbox.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/swiper/swiper-bundle.min.css') }}">
 
-  
   <!-- Main CSS File -->
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
-
-</head>
+  
+</head> 
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+ <header id="header" class="header d-flex align-items-center fixed-top" 
+  style="background: linear-gradient(135deg, #0059b3, #66b2ff); color: #ffffff; font-family: 'Segoe UI', sans-serif; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); z-index: 999;">
+  
+  <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-    
-        <h1 class="sitename">Makombi</h1>
-      </a>
+    <!-- Logo -->
+    <a href="index.html" class="logo d-flex align-items-center me-auto text-white text-decoration-none">
+      <img src="img/logo-kominfo.png" alt="Logo Kominfo" style="height: 40px; margin-right: 10px;">
+      <h1 class="sitename mb-0" style="color: #ffffff;">SIPENA</h1>
+    </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">Informasi</a></li>
-          <li><a href="#services">Galeri</a></li>
-          <li><a href="#portfolio">Berita</a></li>
-          <li><a href="#portfolio">Kontak</a></li>
+    <!-- Menu -->
+    <nav id="navmenu" class="navmenu d-flex align-items-center">
+      <ul class="d-flex list-unstyled mb-0">
+        <li><a href="#hero" class="nav-link px-3 text-white">Home</a></li>
+        <li><a href="#about" class="nav-link px-3 text-white">Informasi</a></li>
+        <li><a href="#contact" class="nav-link px-3 text-white">Kontak</a></li>
+       <li><a href="{{ route('admin.login') }}" class="btn btn-outline-light ms-3 px-4 py-1 rounded-pill" style="border: 2px solid white;">
+    Login</a></li>
+      </ul>
+      
+      <!-- Toggle Mobile -->
+      <i class="mobile-nav-toggle d-xl-none bi bi-list text-white fs-3 ms-3"></i>
+    </nav>
 
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <a class="cta-btn" href="">Login</a>
-
-    </div>
-  </header>
+  </div>
+</header>
 
   <main class="main">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+<section id="hero" class="hero section dark-background">
+  <img src="{{ asset('img/hero-bg.jpg') }}" data-aos="fade-in">
 
-      <img src="{{ asset('img/hero-bg.jpg') }}" data-aos="fade-in">
-
-      
-
-      <div class="container d-flex flex-column align-items-center">
-        <h2 data-aos="fade-up" data-aos-delay="100">MAGANG KOMINFO BINJAI</h2>
-        <p data-aos="fade-up" data-aos-delay="200">Program magang resmi dari Dinas Komunikasi dan Informatika Kota Binjai untuk mahasiswa dan pelajar yang ingin belajar langsung di lingkungan kerja profesional dan berkontribusi dalam pelayanan informasi publik</p>
-        <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
-          <a href="#about" class="btn-get-started">Daftar Sekarang</a>
-        </div>
-      </div>
-
-    </section><!-- /Hero Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <div class="container">
-
-        <div class="row gy-4">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3>Voluptatem dignissimos provident laboris nisi ut aliquip ex ea commodo</h3>
-              <img class="img-fluid rounded-4 mb-4" src="{{ asset('img/about.jpg') }}">
-            <p>Ut fugiat ut sunt quia veniam. Voluptate perferendis perspiciatis quod nisi et. Placeat debitis quia recusandae odit et consequatur voluptatem. Dignissimos pariatur consectetur fugiat voluptas ea.</p>
-            <p>Temporibus nihil enim deserunt sed ea. Provident sit expedita aut cupiditate nihil vitae quo officia vel. Blanditiis eligendi possimus et in cum. Quidem eos ut sint rem veniam qui. Ut ut repellendus nobis tempore doloribus debitis explicabo similique sit. Accusantium sed ut omnis beatae neque deleniti repellendus.</p>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
-            <div class="content ps-0 ps-lg-5">
-              <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
-              <ul>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-              </ul>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-              </p>
-
-              <div class="position-relative mt-4">
-                  <img class="img-fluid rounded-4" src="{{ asset('img/about-2.jpg') }}" alt="">
-
-                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /About Section -->
-
-    <!-- Stats Section -->
-    <section id="stats" class="stats section light-background">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item d-flex align-items-center w-100 h-100">
-              <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
-              <div>
-                <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-                <p>Happy Clients</p>
-              </div>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item d-flex align-items-center w-100 h-100">
-              <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
-              <div>
-                <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-                <p>Projects</p>
-              </div>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item d-flex align-items-center w-100 h-100">
-              <i class="bi bi-headset color-green flex-shrink-0"></i>
-              <div>
-                <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-                <p>Hours Of Support</p>
-              </div>
-            </div>
-          </div><!-- End Stats Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item d-flex align-items-center w-100 h-100">
-              <i class="bi bi-people color-pink flex-shrink-0"></i>
-              <div>
-                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-                <p>Hard Workers</p>
-              </div>
-            </div>
-          </div><!-- End Stats Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Stats Section -->
-
-    <!-- galeri Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>galeri</h2>
-        <p>Galeri<br></p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-5">
-
-          
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
-
-    <!-- Clients Section -->
+  <div class="container d-flex flex-column align-items-center">
+    <h2 data-aos="fade-up" data-aos-delay="100">Sistem Absensi Non-ASN</h2>
+    <p data-aos="fade-up" data-aos-delay="200">Sistem ini digunakan untuk mencatat kehadiran pegawai Non-ASN di lingkungan Dinas Komunikasi dan Informatika Kota Binjai secara real-time dan akurat.</p>
     
-   
-    
+    <!-- ✅ Tombol Absen Masuk & Pulang -->
+    <div class="d-flex gap-3 mt-4" data-aos="fade-up" data-aos-delay="300">
+    <a href="{{ route('form.masuk.store') }}" class="btn btn-success px-4 py-2 rounded">Absen Masuk</a>
+    <a href="{{ route('form.pulang.store') }}" class="btn btn-danger px-4 py-2 rounded">Absen Pulang</a>
+</div>
 
-      
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
+  </div>
+</section>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Kontak</h2>
-        <p>Hubungi Kami</p>
-      </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-          <div class="col-lg-6 ">
-            <div class="row gy-4">
-
-              <div class="col-lg-12">
-                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-                  <i class="bi bi-geo-alt"></i>
-                  <h3>Address</h3>
-                  <p>A108 Adam Street, New York, NY 535022</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="col-md-6">
-                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
-                  <i class="bi bi-telephone"></i>
-                  <h3>Call Us</h3>
-                  <p>+1 5589 55488 55</p>
-                </div>
-              </div><!-- End Info Item -->
-
-              <div class="col-md-6">
-                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
-                  <i class="bi bi-envelope"></i>
-                  <h3>Email Us</h3>
-                  <p>info@example.com</p>
-                </div>
-              </div><!-- End Info Item -->
-
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="4" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
+<!-- About Section -->
+<section id="about" class="about section">
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <h3>Sistem Absensi Non-ASN</h3>
+        <img class="img-fluid rounded-4 mb-4" src="{{ asset('img/about.jpg') }}">
+        <p>Sistem ini dibuat untuk mendukung tata kelola kehadiran pegawai Non-ASN secara efisien, transparan, dan digital.</p>
+        <p>Melalui fitur pencatatan otomatis, verifikasi wajah, dan pelaporan harian, sistem ini membantu monitoring absensi lebih mudah dan dapat diakses oleh admin secara langsung.</p>
       </div>
-
-    </section><!-- /Contact Section -->
-
-  </main>
-
-  <footer id="footer" class="footer dark-background">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Makombi</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+        <div class="content ps-0 ps-lg-5">
+          <p class="fst-italic">
+            Beberapa keunggulan sistem absensi ini:
+          </p>
           <ul>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Informasi</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Galeri</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Berita</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Kontak</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            <li><i class="bi bi-check-circle-fill"></i> <span>Verifikasi wajah untuk menghindari manipulasi data kehadiran.</span></li>
+            <li><i class="bi bi-check-circle-fill"></i> <span>Data absensi tersimpan aman dan dapat diakses kapan saja.</span></li>
+            <li><i class="bi bi-check-circle-fill"></i> <span>Terintegrasi dengan dashboard admin untuk pemantauan harian.</span></li>
           </ul>
+          <p>
+            Sistem ini merupakan bagian dari komitmen Dinas Kominfo Binjai dalam menerapkan digitalisasi pelayanan kepegawaian.
+          </p>
+          <div class="position-relative mt-4">
+            <img class="img-fluid rounded-4" src="{{ asset('img/about-2.jpg') }}" alt="">
+            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+          </div>
         </div>
-
-
-        <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright 2025</span> <strong class="px-1 sitename">Makombi</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
       </div>
     </div>
-          </footer>
+  </div>
+</section>
 
-          <!-- Scroll Top -->
+    <!-- Contact Section -->
+<section id="contact" class="contact section bg-light py-5">
+
+  <!-- Section Title -->
+  <div class="container text-center mb-5" data-aos="fade-up">
+    <h2 class="fw-bold text-dark">Kontak</h2>
+    <p class="text-muted">Hubungi Kami</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row g-4">
+
+     <!-- Info Section -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+      <div class="row g-4">
+
+        <!-- Alamat -->
+        <div class="col-md-4">
+          <div class="bg-white shadow-sm p-4 rounded d-flex align-items-start">
+            <i class="bi bi-geo-alt-fill fs-3 text-dark me-3"></i>
+            <div>
+              <h5 class="mb-1 fw-semibold text-dark">Alamat</h5>
+              <p class="mb-0 text-muted"> Jalan Kartini, Kec. Binjai Kota, Kota Binjai, Sumatera Utara 20741</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Telepon -->
+        <div class="col-md-4">
+          <div class="bg-white shadow-sm p-4 rounded d-flex align-items-start">
+            <i class="bi bi-telephone-fill fs-3 text-dark me-3"></i>
+            <div>
+              <h5 class="mb-1 fw-semibold text-dark">Telepon</h5>
+              <p class="mb-0 text-muted">(061) 123456</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="col-md-4">
+          <div class="bg-white shadow-sm p-4 rounded d-flex align-items-start">
+            <i class="bi bi-envelope-fill fs-3 text-dark me-3"></i>
+            <div>
+              <h5 class="mb-1 fw-semibold text-dark">Email</h5>
+              <p class="mb-0 text-muted">admin@kominfo.go.id</p>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- row -->
+    </div> <!-- col -->
+  </div> <!-- row -->
+</div> <!-- container -->
+
+</section>
+<!-- End Contact Section -->
+
+
+  </main>
+<footer id="footer" class="footer text-white py-4" style="background: linear-gradient(135deg, #66aaff, #3366cc); font-family: 'Segoe UI', sans-serif; font-size: 0.95rem;">
+  <div class="container" style="max-width: 1000px;">
+
+    <!-- Baris Konten Footer -->
+    <div class="row justify-content-between align-items-start">
+
+      <!-- Kontak Kami -->
+      <div class="col-md-6 col-lg-6 mb-3">
+        <h6 class="fw-bold mb-2 text-white">Kontak Kami</h6>
+        <ul class="list-unstyled mb-0 text-white">
+          <li><i class="bi bi-geo-alt-fill me-2"></i>Jalan Kartini, Kec. Binjai Kota</li>
+          <li><i class="bi bi-geo-fill me-2"></i>Binjai, Sumatera Utara 20741</li>
+          <li><i class="bi bi-telephone-fill me-2"></i>(061) 123456</li>
+          <li><i class="bi bi-envelope-fill me-2"></i>admin@kominfo.go.id</li>
+        </ul>
+      </div>
+
+      <!-- Ikuti Kami -->
+      <div class="col-md-6 col-lg-6 mb-3">
+        <h6 class="fw-bold mb-2 text-white">Ikuti Kami</h6>
+        <div class="d-flex flex-wrap">
+          <a href="https://www.facebook.com/diskominfokotabinjai/?locale=id_ID" target="_blank" rel="noopener noreferrer" class="me-3 text-white fs-5">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/dinaskominfokotabinjai/" target="_blank" rel="noopener noreferrer" class="me-3 text-white fs-5">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/@diskominfokotabinjai6252" target="_blank" rel="noopener noreferrer" class="text-white fs-5">
+            <i class="bi bi-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Garis Bawah & Hak Cipta -->
+    <div class="row mt-3 pt-3 border-top border-light">
+      <div class="col text-center small text-white">
+        &copy; {{ date('Y') }} Dinas Kominfo Kota Binjai. All rights reserved.
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+
+
+
+
+  <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
-        <!-- Vendor JS Files -->
-
+  <!-- Vendor JS Files -->
   <script src="{{ asset('vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
-      <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ asset('vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+  <script src="{{ asset('vendor/swiper/swiper-bundle.min.js') }}"></script>
   <script src="{{ asset('vendor/purecounter/purecounter_vanilla.js') }}"></script>
   <script src="{{ asset('vendor/glightbox/js/glightbox.min.js') }}"></script>
-        <script src="{{ asset('vendor/aos/aos.js') }}"></script>
-          <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
+  <script src="{{ asset('vendor/aos/aos.js') }}"></script>
+  <script src="{{ asset('vendor/php-email-form/validate.js') }}"></script>
   <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
-
-
-
-
   <!-- Main JS File -->
-    <script src="{{ asset('js/main.js') }}"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
 
-    </body>
+</body>
+
 </html>
