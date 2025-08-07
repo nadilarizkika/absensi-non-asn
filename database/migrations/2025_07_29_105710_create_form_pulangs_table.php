@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        // database/migrations/xxxx_xx_xx_create_users_table.php
-Schema::create('users', function (Blueprint $table) {
+        Schema::create('form_pulangs', function (Blueprint $table) {
     $table->id();
-    $table->string('name');
+    $table->string('nama');
+    $table->date('tanggal');
+    $table->time('jam_pulang');
+    $table->longText('foto_muka')->nullable();
     $table->timestamps();
 });
 
@@ -29,6 +31,6 @@ Schema::create('users', function (Blueprint $table) {
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('form_pulangs');
     }
 };
