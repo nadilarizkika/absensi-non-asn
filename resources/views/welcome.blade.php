@@ -34,6 +34,13 @@
 
 <body class="index-page">
 
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+
  <header id="header" class="header d-flex align-items-center fixed-top" 
   style="background: linear-gradient(135deg, #0059b3, #66b2ff); color: #ffffff; font-family: 'Segoe UI', sans-serif; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); z-index: 999;">
   
@@ -51,8 +58,8 @@
         <li><a href="#hero" class="nav-link px-3 text-white">Home</a></li>
         <li><a href="#about" class="nav-link px-3 text-white">Informasi</a></li>
         <li><a href="#contact" class="nav-link px-3 text-white">Kontak</a></li>
-       <li><a href="{{ route('admin.login') }}" class="btn btn-outline-light ms-3 px-4 py-1 rounded-pill" style="border: 2px solid white;">
-    Login</a></li>
+       <li><a href="{{ route('admin.login') }}" class="btn btn-outline-light ms-3 px-4 py-1 rounded-0" 
+       style="border: 2px solid white;">Login</a></li>
       </ul>
       
       <!-- Toggle Mobile -->
@@ -82,97 +89,233 @@
 </section>
 
 
-<!-- About Section -->
-<section id="about" class="about section">
+<!-- =========================
+      ABOUT (Rapi + Animasi)
+========================= -->
+<section id="about" class="py-5" style="background: linear-gradient(180deg,#f6f9ff 0%,#ffffff 100%);">
   <div class="container">
-    <div class="row gy-4">
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <h3>Sistem Absensi Non-ASN</h3>
-        <img class="img-fluid rounded-4 mb-4" src="{{ asset('img/about.jpg') }}">
-        <p>Sistem ini dibuat untuk mendukung tata kelola kehadiran pegawai Non-ASN secara efisien, transparan, dan digital.</p>
-        <p>Melalui fitur pencatatan otomatis, verifikasi wajah, dan pelaporan harian, sistem ini membantu monitoring absensi lebih mudah dan dapat diakses oleh admin secara langsung.</p>
+    <div class="row g-5 align-items-center">
+
+      <!-- Teks -->
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
+        <span class="badge rounded-pill px-3 py-2 mb-3" style="background:#e7f0ff; color:#0b5ed7;">
+          Sistem Absensi Non-ASN
+        </span>
+        <h2 class="fw-bold mb-3" style="letter-spacing:.2px;">Efisien, Transparan, & Digital</h2>
+        <p class="mb-3">
+          Sistem ini dibuat untuk mendukung tata kelola kehadiran pegawai Non-ASN secara efisien, transparan, dan digital.
+        </p>
+        <p class="mb-4">
+          Melalui fitur pencatatan otomatis, verifikasi wajah, dan pelaporan harian, sistem ini membantu monitoring absensi lebih mudah dan dapat diakses oleh admin secara langsung.
+        </p>
+
+        <!-- Keunggulan (grid rapi) -->
+        <div class="row g-3">
+          <div class="col-sm-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="d-flex align-items-start p-3 rounded-4 shadow-sm bg-white h-100 feature-card">
+              <div class="icon-badge me-3" data-bs-toggle="tooltip" title="Teknologi Face Recognition">
+                <i class="bi bi-emoji-smile-upside-down"></i>
+              </div>
+              <div>
+                <h6 class="mb-1">Verifikasi Wajah</h6>
+                <small class="text-muted">Mengurangi manipulasi kehadiran.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6" data-aos="fade-up" data-aos-delay="150">
+            <div class="d-flex align-items-start p-3 rounded-4 shadow-sm bg-white h-100 feature-card">
+              <div class="icon-badge me-3" data-bs-toggle="tooltip" title="Keamanan & Akses Data">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <div>
+                <h6 class="mb-1">Penyimpanan Aman</h6>
+                <small class="text-muted">Data tersimpan & siap diakses kapan saja.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="d-flex align-items-start p-3 rounded-4 shadow-sm bg-white h-100 feature-card">
+              <div class="icon-badge me-3" data-bs-toggle="tooltip" title="Pantau Harian">
+                <i class="bi bi-speedometer2"></i>
+              </div>
+              <div>
+                <h6 class="mb-1">Terintegrasi Dashboard</h6>
+                <small class="text-muted">Pemantauan real-time oleh admin.</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="d-flex align-items-start p-3 rounded-4 shadow-sm bg-white h-100 feature-card">
+              <div class="icon-badge me-3" data-bs-toggle="tooltip" title="Operasional yang Mulus">
+                <i class="bi bi-check2-circle"></i>
+              </div>
+              <div>
+                <h6 class="mb-1">Operasional Ringan</h6>
+                <small class="text-muted">Antarmuka sederhana & responsif.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-4 mb-0">
+          Sistem ini merupakan bagian dari komitmen <strong>Dinas Kominfo Binjai</strong>
+          dalam menerapkan digitalisasi pelayanan kepegawaian.
+        </p>
       </div>
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
-        <div class="content ps-0 ps-lg-5">
-          <p class="fst-italic">
-            Beberapa keunggulan sistem absensi ini:
-          </p>
-          <ul>
-            <li><i class="bi bi-check-circle-fill"></i> <span>Verifikasi wajah untuk menghindari manipulasi data kehadiran.</span></li>
-            <li><i class="bi bi-check-circle-fill"></i> <span>Data absensi tersimpan aman dan dapat diakses kapan saja.</span></li>
-            <li><i class="bi bi-check-circle-fill"></i> <span>Terintegrasi dengan dashboard admin untuk pemantauan harian.</span></li>
-          </ul>
-          <p>
-            Sistem ini merupakan bagian dari komitmen Dinas Kominfo Binjai dalam menerapkan digitalisasi pelayanan kepegawaian.
-          </p>
-          <div class="position-relative mt-4">
-            <img class="img-fluid rounded-4" src="{{ asset('img/about-2.jpg') }}" alt="">
-            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+
+      <!-- Gambar (stack rapi + animasi hover) -->
+<div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+  <div class="d-flex flex-column gap-3">
+
+    <!-- Foto Utama -->
+    <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm img-zoom">
+      <img src="{{ asset('img/about.jpg') }}" alt="Tentang Sistem Absensi" class="w-100 h-100" style="object-fit:cover;">
+    </div>
+
+    <!-- Video Thumbnail -->
+    <div class="position-relative ratio ratio-16x9 rounded-4 overflow-hidden shadow img-zoom">
+      <img src="{{ asset('img/about-2.jpg') }}" alt="Video Sistem" class="w-100 h-100" style="object-fit:cover;">
+      <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox play-btn" aria-label="Putar video"></a>
+    </div>
+
+  </div>
+</div>
+
+
+        <!-- Pada mobile, tampilkan thumbnail video di bawah supaya tidak bertumpuk -->
+        <div class="d-md-none mt-3" data-aos="fade-up" data-aos-delay="150">
+          <div class="position-relative">
+            <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow img-zoom">
+              <img src="{{ asset('img/about-2.jpg') }}" alt="Video Sistem" class="w-100 h-100" style="object-fit:cover;">
+            </div>
+            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox play-btn" aria-label="Putar video"></a>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-    <!-- Contact Section -->
-<section id="contact" class="contact section bg-light py-5">
+<!-- =========================
+      CONTACT (Rapi + Konsisten)
+========================= -->
+<section id="contact" class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="fw-bold mb-2">Kontak</h2>
+      <p class="text-muted mb-0">Hubungi Kami</p>
+    </div>
 
-  <!-- Section Title -->
-  <div class="container text-center mb-5" data-aos="fade-up">
-    <h2 class="fw-bold text-dark">Kontak</h2>
-    <p class="text-muted">Hubungi Kami</p>
-  </div>
+    <div class="row g-4 align-items-stretch">
 
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row g-4">
-
-     <!-- Info Section -->
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-12">
-      <div class="row g-4">
-
-        <!-- Alamat -->
-        <div class="col-md-4">
-          <div class="bg-white shadow-sm p-4 rounded d-flex align-items-start">
-            <i class="bi bi-geo-alt-fill fs-3 text-dark me-3"></i>
+      <!-- Alamat -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
+        <div class="card h-100 border-0 shadow-sm rounded-4 lift-on-hover">
+          <div class="card-body d-flex">
+            <div class="icon-badge me-3" data-bs-toggle="tooltip" title="Alamat Kantor">
+              <i class="bi bi-geo-alt-fill"></i>
+            </div>
             <div>
-              <h5 class="mb-1 fw-semibold text-dark">Alamat</h5>
-              <p class="mb-0 text-muted"> Jalan Kartini, Kec. Binjai Kota, Kota Binjai, Sumatera Utara 20741</p>
+              <h5 class="mb-1 fw-semibold">Alamat</h5>
+              <p class="mb-0 text-muted">Jalan Kartini, Kec. Binjai Kota, Kota Binjai, Sumatera Utara 20741</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Telepon -->
-        <div class="col-md-4">
-          <div class="bg-white shadow-sm p-4 rounded d-flex align-items-start">
-            <i class="bi bi-telephone-fill fs-3 text-dark me-3"></i>
+      <!-- Telepon -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="card h-100 border-0 shadow-sm rounded-4 lift-on-hover">
+          <div class="card-body d-flex">
+            <div class="icon-badge me-3" data-bs-toggle="tooltip" title="Telepon">
+              <i class="bi bi-telephone-fill"></i>
+            </div>
             <div>
-              <h5 class="mb-1 fw-semibold text-dark">Telepon</h5>
+              <h5 class="mb-1 fw-semibold">Telepon</h5>
               <p class="mb-0 text-muted">(061) 123456</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Email -->
-        <div class="col-md-4">
-          <div class="bg-white shadow-sm p-4 rounded d-flex align-items-start">
-            <i class="bi bi-envelope-fill fs-3 text-dark me-3"></i>
+      <!-- Email -->
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="card h-100 border-0 shadow-sm rounded-4 lift-on-hover">
+          <div class="card-body d-flex">
+            <div class="icon-badge me-3" data-bs-toggle="tooltip" title="Email Resmi">
+              <i class="bi bi-envelope-fill"></i>
+            </div>
             <div>
-              <h5 class="mb-1 fw-semibold text-dark">Email</h5>
+              <h5 class="mb-1 fw-semibold">Email</h5>
               <p class="mb-0 text-muted">admin@kominfo.go.id</p>
             </div>
           </div>
         </div>
+      </div>
 
-      </div> <!-- row -->
-    </div> <!-- col -->
-  </div> <!-- row -->
-</div> <!-- container -->
-
+    </div> <!-- /row -->
+  </div>
 </section>
-<!-- End Contact Section -->
+
+<!-- ================
+      STYLE TAMBAHAN
+================ -->
+<style>
+  /* Kapsul ikon */
+  .icon-badge{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:44px; height:44px; border-radius:50%;
+    background:#e7f0ff; color:#0b5ed7; flex:0 0 44px;
+    font-size:18px;
+  }
+
+  /* Kartu fitur/ kontak */
+  .feature-card{ transition: transform .25s ease, box-shadow .25s ease; }
+  .feature-card:hover{ transform: translateY(-2px); box-shadow:0 .75rem 1.5rem rgba(0,0,0,.08); }
+  .lift-on-hover{ transition: transform .25s ease, box-shadow .25s ease; }
+  .lift-on-hover:hover{ transform: translateY(-4px); box-shadow:0 1.25rem 2rem rgba(0,0,0,.10); }
+
+  /* Zoom gambar halus */
+  .img-zoom img{ transition: transform .5s ease; }
+  .img-zoom:hover img{ transform: scale(1.04); }
+
+  /* Thumbnail video mengambang (desktop) */
+  .about-float{
+    position:absolute; bottom:-12%; left:-6%;
+    width:55%; z-index:2;
+  }
+
+  /* Tombol play (GLightbox) */
+  .play-btn{
+    position:absolute; inset:0; margin:auto; width:64px; height:64px;
+    display:flex; align-items:center; justify-content:center;
+    border-radius:50%; background:rgba(11,94,215,.9);
+    box-shadow:0 10px 20px rgba(11,94,215,.25);
+    transition: transform .2s ease;
+  }
+  .play-btn::before{
+    content:""; display:block; width:0; height:0;
+    border-left:18px solid #fff; border-top:10px solid transparent; border-bottom:10px solid transparent;
+    margin-left:4px;
+  }
+  .play-btn:hover{ transform: scale(1.06); }
+
+  /* Responsif: rapikan overlap pada layar kecil */
+  @media (max-width: 991.98px){
+    .about-float{ position:static; width:100%; margin-top:1rem; }
+  }
+</style>
+
+<!-- ================
+      JS TOOLTIP
+================ -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const triggers = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    triggers.forEach(el => new bootstrap.Tooltip(el));
+  });
+</script>
 
 
   </main>

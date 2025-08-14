@@ -14,29 +14,24 @@
         overflow-x: hidden;
     }
 
-    /* HAPUS padding Bootstrap container */
-    .container,
-    .container-fluid,
     .container-rekap {
-        margin: 0;
-        padding: 0;
-        max-width: 100%;
-    }
-
-    .container-rekap {
-        display: flex;
         width: 100%;
         min-height: 100vh;
     }
 
     .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 250px;
+        height: 100vh;
         background: linear-gradient(180deg, #66b3ff, #3399ff);
         color: white;
         padding: 25px 20px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        z-index: 1000;
     }
 
     .sidebar h2 {
@@ -90,9 +85,10 @@
     }
 
     .main-content {
-        flex: 1;
+        margin-left: 250px;
         padding: 40px;
         overflow-x: auto;
+        width: calc(100% - 250px);
     }
 
     .card {
@@ -130,12 +126,18 @@
     tr:nth-child(even) {
         background-color: #f0f6fc;
     }
+
+    /* Pagination style */
+    .pagination {
+        margin-top: 20px;
+        justify-content: center;
+    }
 </style>
 
 <div class="container-rekap">
     <div class="sidebar">
         <div>
-            <h2>ADMIN PANEL</h2>
+            <h2>SIPENA</h2>
             <a href="{{ route('admin.dashboard') }}"><i class="fas fa-home"></i> Dashboard</a>
             <a href="{{ route('admin.rekap') }}"><i class="fas fa-file-alt"></i> Rekap Absensi</a>
         </div>
@@ -150,33 +152,37 @@
     <div class="main-content">
         <div class="card">
             <h3>Rekapitulasi Absensi Non-ASN</h3>
+
+            <!-- Form Filter -->
             <form method="GET" action="{{ route('admin.rekap') }}" style="margin-bottom: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
-    <input
-        type="text"
-        name="nama"
-        placeholder="Cari Nama..."
-        value="{{ request('nama') }}"
-        style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 4px;"
-    >
-    <input
-        type="date"
-        name="tanggal"
-        value="{{ request('tanggal') }}"
-        style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 4px;"
-    >
-    <button
-        type="submit"
-        style="padding: 8px 16px; background-color: #3399ff; color: white; border: none; border-radius: 4px; cursor: pointer;"
-    >
-        Cari
-    </button>
-    <a
-        href="{{ route('admin.rekap') }}"
-        style="padding: 8px 16px; background-color: #777; color: white; text-decoration: none; border-radius: 4px;"
-    >
-        Reset
-    </a>
-</form>
+                <input
+                    type="text"
+                    name="nama"
+                    placeholder="Cari Nama..."
+                    value="{{ request('nama') }}"
+                    style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 4px;"
+                >
+                <input
+                    type="date"
+                    name="tanggal"
+                    value="{{ request('tanggal') }}"
+                    style="padding: 8px 12px; border: 1px solid #ccc; border-radius: 4px;"
+                >
+                <button
+                    type="submit"
+                    style="padding: 8px 16px; background-color: #3399ff; color: white; border: none; border-radius: 4px; cursor: pointer;"
+                >
+                    Cari
+                </button>
+                <a
+                    href="{{ route('admin.rekap') }}"
+                    style="padding: 8px 16px; background-color: #777; color: white; text-decoration: none; border-radius: 4px;"
+                >
+                    Reset
+                </a>
+            </form>
+
+            <!-- Tabel Rekap -->
             <table>
                 <thead>
                     <tr>
@@ -204,6 +210,11 @@
                     @endforeach
                 </tbody>
             </table>
+
+            <!-- Pagination -->
+            <div>
+                {{ $dataMasuk->links('pagination::bootstrap-5') }}
+            </div>
         </div>
     </div>
 </div>
