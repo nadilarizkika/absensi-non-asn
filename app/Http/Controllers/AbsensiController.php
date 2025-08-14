@@ -7,24 +7,24 @@ use App\Models\Formmasuk;
 use App\Models\Formpulang;
 use App\Models\User;
 use App\Models\Pegawai;
-use App\Http\Controllers\Controller; // ← Tambahkan ini!
-
+use App\Http\Controllers\Controller;
 
 class AbsensiController extends Controller
 {
     // ================== TAMPILKAN FORM ===================
 
     public function formMasuk()
-{
-    $users = Pegawai::all(); // ambil semua user
-    return view('attendance.form_masuk', compact('users'));
-}
+    {
+        $users = Pegawai::all(); // Ambil semua pegawai
+        return view('attendance.form_masuk', compact('users'));
+    }
 
-public function formPulang()
-{
-    $users = Pegawai::all(); // ambil semua user
-    return view('attendance.form_pulang', compact('users'));
-}
+    public function formPulang()
+    {
+        $users = Pegawai::all(); // Ambil semua pegawai
+        return view('attendance.form_pulang', compact('users'));
+    }
+
     // ================== SIMPAN DATA ABSEN MASUK ===================
 
     public function storeMasuk(Request $request)
@@ -44,7 +44,8 @@ public function formPulang()
 
         Formmasuk::create($validated);
 
-        return redirect()->back()->with('success', 'Absensi masuk berhasil disimpan.');
+        // Redirect ke halaman welcome setelah simpan
+        return redirect()->route('welcome')->with('success', 'Absensi masuk berhasil disimpan.');
     }
 
     // ================== SIMPAN DATA ABSEN PULANG ===================
@@ -62,6 +63,6 @@ public function formPulang()
 
         Formpulang::create($validated);
 
-        return redirect()->back()->with('success', 'Absensi pulang berhasil disimpan.');
+        return redirect()->route('welcome')->with('success', 'Absensi pulang berhasil disimpan.');
     }
 }

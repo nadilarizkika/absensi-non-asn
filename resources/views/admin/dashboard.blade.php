@@ -14,15 +14,6 @@
         overflow-x: hidden;
     }
 
-    /* Hapus padding container Bootstrap bawaan */
-    .container,
-    .container-fluid,
-    .container-dashboard {
-        margin: 0;
-        padding: 0;
-        max-width: 100%;
-    }
-
     .container-dashboard {
         display: flex;
         min-height: 100vh;
@@ -37,6 +28,10 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        position: fixed;
+        height: 100vh;
+        top: 0;
+        left: 0;
     }
 
     .sidebar h2 {
@@ -90,9 +85,9 @@
     }
 
     .main-content {
-        flex: 1;
+        margin-left: 250px;
         padding: 40px;
-        overflow-y: auto;
+        flex: 1;
     }
 
     .card {
@@ -103,6 +98,7 @@
         border-left: 6px solid #3399ff;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         max-width: 100%;
+        margin-bottom: 30px;
     }
 
     .card:hover {
@@ -121,13 +117,73 @@
         margin: 0;
         color: #555;
     }
-</style>
 
+  .stats-row {
+    display: flex;
+    flex-wrap: nowrap; /* tidak melipat ke bawah */
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+   .stat-card {
+    flex: 1;
+    min-width: 0; /* biar flex: 1 bisa bekerja optimal */
+    border-radius: 12px;
+    padding: 20px 25px;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s ease;
+    min-height: 120px; /* tinggi konsisten */
+}
+
+.stat-icon {
+    font-size: 32px;
+    opacity: 0.3;
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+}
+
+.stat-content {
+    z-index: 2;
+}
+
+.stat-card.total {
+    background: linear-gradient(135deg, #007bff, #3399ff);
+}
+
+.stat-card.absen {
+    background: linear-gradient(135deg, #28a745, #5cd65c);
+}
+
+.stat-card.belum {
+    background: linear-gradient(135deg, #dc3545, #ff6b6b);
+}
+
+.stat-title {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+}
+
+</style>
 
 <div class="container-dashboard">
     <div class="sidebar">
         <div>
-            <h2>Admin Panel</h2>
+            <h2>SIPENA</h2>
             <a href="{{ route('admin.dashboard') }}"><i class="fas fa-home"></i> Dashboard</a>
             <a href="{{ route('admin.rekap') }}"><i class="fas fa-file-alt"></i> Rekap Absensi</a>
         </div>
@@ -138,10 +194,37 @@
             </button>
         </form>
     </div>
+
     <div class="main-content">
         <div class="card">
             <h3>Selamat Datang, Admin</h3>
             <p>Berikut adalah ringkasan data absensi Non-ASN hari ini.</p>
+        </div>
+
+       <div class="stats-row">
+    <div class="stat-card total">
+        <div class="stat-content">
+            <div class="stat-title">Total Pegawai</div>
+            <div class="stat-number">{{ $totalPegawai }}</div>
+        </div>
+        <i class="fas fa-users stat-icon"></i>
+    </div>
+    <div class="stat-card absen">
+        <div class="stat-content">
+            <div class="stat-title">Sudah Absen Hari Ini</div>
+            <div class="stat-number">{{ $sudahAbsen }}</div>
+        </div>
+        <i class="fas fa-user-check stat-icon"></i>
+    </div>
+    <div class="stat-card belum">
+        <div class="stat-content">
+            <div class="stat-title">Belum Absen</div>
+            <div class="stat-number">{{ $belumAbsen }}</div>
+        </div>
+        <i class="fas fa-user-times stat-icon"></i>
+    </div>
+</div>
+
         </div>
     </div>
 </div>
