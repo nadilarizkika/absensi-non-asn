@@ -90,14 +90,14 @@
 
 
 <!-- =========================
-      ABOUT (Rapi + Animasi)
+      ABOUT (Rapi Tanpa Gambar/Video)
 ========================= -->
 <section id="about" class="py-5" style="background: linear-gradient(180deg,#f6f9ff 0%,#ffffff 100%);">
   <div class="container">
     <div class="row g-5 align-items-center">
 
       <!-- Teks -->
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="50">
+      <div class="col-lg-12" data-aos="fade-up" data-aos-delay="50">
         <span class="badge rounded-pill px-3 py-2 mb-3" style="background:#e7f0ff; color:#0b5ed7;">
           Sistem Absensi Non-ASN
         </span>
@@ -163,103 +163,12 @@
         </p>
       </div>
 
-      <!-- Gambar (stack rapi + animasi hover) -->
-<div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-  <div class="d-flex flex-column gap-3">
-
-    <!-- Foto Utama -->
-    <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm img-zoom">
-      <img src="{{ asset('img/about.jpg') }}" alt="Tentang Sistem Absensi" class="w-100 h-100" style="object-fit:cover;">
-    </div>
-
-    <!-- Video Thumbnail -->
-    <div class="position-relative ratio ratio-16x9 rounded-4 overflow-hidden shadow img-zoom">
-      <img src="{{ asset('img/about-2.jpg') }}" alt="Video Sistem" class="w-100 h-100" style="object-fit:cover;">
-      <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox play-btn" aria-label="Putar video"></a>
-    </div>
-
-  </div>
-</div>
-
-
-        <!-- Pada mobile, tampilkan thumbnail video di bawah supaya tidak bertumpuk -->
-        <div class="d-md-none mt-3" data-aos="fade-up" data-aos-delay="150">
-          <div class="position-relative">
-            <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow img-zoom">
-              <img src="{{ asset('img/about-2.jpg') }}" alt="Video Sistem" class="w-100 h-100" style="object-fit:cover;">
-            </div>
-            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox play-btn" aria-label="Putar video"></a>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- =========================
-      CONTACT (Rapi + Konsisten)
-========================= -->
-<section id="contact" class="py-5 bg-light">
-  <div class="container">
-    <div class="text-center mb-5" data-aos="fade-up">
-      <h2 class="fw-bold mb-2">Kontak</h2>
-      <p class="text-muted mb-0">Hubungi Kami</p>
-    </div>
-
-    <div class="row g-4 align-items-stretch">
-
-      <!-- Alamat -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
-        <div class="card h-100 border-0 shadow-sm rounded-4 lift-on-hover">
-          <div class="card-body d-flex">
-            <div class="icon-badge me-3" data-bs-toggle="tooltip" title="Alamat Kantor">
-              <i class="bi bi-geo-alt-fill"></i>
-            </div>
-            <div>
-              <h5 class="mb-1 fw-semibold">Alamat</h5>
-              <p class="mb-0 text-muted">Jalan Kartini, Kec. Binjai Kota, Kota Binjai, Sumatera Utara 20741</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Telepon -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card h-100 border-0 shadow-sm rounded-4 lift-on-hover">
-          <div class="card-body d-flex">
-            <div class="icon-badge me-3" data-bs-toggle="tooltip" title="Telepon">
-              <i class="bi bi-telephone-fill"></i>
-            </div>
-            <div>
-              <h5 class="mb-1 fw-semibold">Telepon</h5>
-              <p class="mb-0 text-muted">(061) 123456</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Email -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
-        <div class="card h-100 border-0 shadow-sm rounded-4 lift-on-hover">
-          <div class="card-body d-flex">
-            <div class="icon-badge me-3" data-bs-toggle="tooltip" title="Email Resmi">
-              <i class="bi bi-envelope-fill"></i>
-            </div>
-            <div>
-              <h5 class="mb-1 fw-semibold">Email</h5>
-              <p class="mb-0 text-muted">admin@kominfo.go.id</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div> <!-- /row -->
-  </div>
-</section>
-
-<!-- ================
-      STYLE TAMBAHAN
+<!-- ================ 
+      STYLE (Tanpa Gambar/Video)
 ================ -->
 <style>
   /* Kapsul ikon */
@@ -270,52 +179,11 @@
     font-size:18px;
   }
 
-  /* Kartu fitur/ kontak */
+  /* Kartu fitur */
   .feature-card{ transition: transform .25s ease, box-shadow .25s ease; }
   .feature-card:hover{ transform: translateY(-2px); box-shadow:0 .75rem 1.5rem rgba(0,0,0,.08); }
-  .lift-on-hover{ transition: transform .25s ease, box-shadow .25s ease; }
-  .lift-on-hover:hover{ transform: translateY(-4px); box-shadow:0 1.25rem 2rem rgba(0,0,0,.10); }
-
-  /* Zoom gambar halus */
-  .img-zoom img{ transition: transform .5s ease; }
-  .img-zoom:hover img{ transform: scale(1.04); }
-
-  /* Thumbnail video mengambang (desktop) */
-  .about-float{
-    position:absolute; bottom:-12%; left:-6%;
-    width:55%; z-index:2;
-  }
-
-  /* Tombol play (GLightbox) */
-  .play-btn{
-    position:absolute; inset:0; margin:auto; width:64px; height:64px;
-    display:flex; align-items:center; justify-content:center;
-    border-radius:50%; background:rgba(11,94,215,.9);
-    box-shadow:0 10px 20px rgba(11,94,215,.25);
-    transition: transform .2s ease;
-  }
-  .play-btn::before{
-    content:""; display:block; width:0; height:0;
-    border-left:18px solid #fff; border-top:10px solid transparent; border-bottom:10px solid transparent;
-    margin-left:4px;
-  }
-  .play-btn:hover{ transform: scale(1.06); }
-
-  /* Responsif: rapikan overlap pada layar kecil */
-  @media (max-width: 991.98px){
-    .about-float{ position:static; width:100%; margin-top:1rem; }
-  }
 </style>
 
-<!-- ================
-      JS TOOLTIP
-================ -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const triggers = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    triggers.forEach(el => new bootstrap.Tooltip(el));
-  });
-</script>
 
 
   </main>
@@ -363,11 +231,6 @@
 
   </div>
 </footer>
-
-
-
-
-
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
